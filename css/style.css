@@ -1,0 +1,48 @@
+body{
+    margin:0;
+    background:#F8FAFC;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.div-container{
+    width:350px;
+    background:#FFFFFF;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.08);
+}
+.username-container{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border:1px solid #cccccc;
+    border-radius:12px;
+    box-sizing:border-box;
+}
+.username-container:focus{
+    border:1px solid #2563EB;
+    outline:none;
+}
+
+#btn_id{
+    width:100%;
+    padding:10px;
+    background:#2563EB;
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:15px;
+}
+#btn_id:hover{
+    background:#1D4ED8;
+}
+#error_msg{
+    color:#EF4444;
+    font-size:14px;
+    margin-bottom:10px;
+
+}

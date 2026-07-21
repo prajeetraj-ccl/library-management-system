@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "bookName": "Java Basics",
+    "author": "James",
+    "category": "Programming",
+    "publisher": "ABC Publications",
+    "language": "English",
+    "copies": 10,
+    "availableCopies": 8,
+    "status": "Available"
+  },
+  {
+    "id": 2,
+    "bookName": "Python Programming",
+    "author": "Mike",
+    "category": "Programming",
+    "publisher": "XYZ Publications",
+    "language": "English",
+    "copies": 15,
+    "availableCopies": 10,
+    "status": "Available"
+  },
+  {
+    "id": 3,
+    "bookName": "HTML & CSS",
+    "author": "John",
+    "category": "Web Development",
+    "publisher": "Tech Books",
+    "language": "English",
+    "copies": 12,
+    "availableCopies": 7,
+    "status": "Borrowed"
+  },
+  {
+    "id": 4,
+    "bookName": "JavaScript",
+    "author": "David",
+    "category": "Programming",
+    "publisher": "Code World",
+    "language": "English",
+    "copies": 8,
+    "availableCopies": 50,
+    "status": "Available"
+  },
+  {
+    "id": 5,
+    "bookName": "Data Structures",
+    "author": "Robert",
+    "category": "Computer Science",
+    "publisher": "Learning Hub",
+    "language": "English",
+    "copies": 20,
+    "availableCopies": 18,
+    "status": "Available"
+  }
+]

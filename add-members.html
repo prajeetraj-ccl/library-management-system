@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Member</title>
+    <link rel="stylesheet" href="./css/members.css">
+    <script defer src="./js/add-members.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h2>Library Management System</h2>
+        <a href="members.html">Back</a>
+    </div>
+    <div class="container">
+        <h2>Add Member</h2>
+        <label>Name</label>
+        <input
+            type="text"
+            id="member_name"
+            placeholder="Enter Member Name">
+        <br><br>
+        <label>Mobile</label>
+        <input
+            type="text"
+            id="mobile"
+            placeholder="Enter Mobile Number">
+        <br><br>
+        <label>Email</label>
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter Email">
+        <br><br>
+        <label>Status</label>
+        <select id="status">
+            <option>Active</option>
+            <option>Inactive</option>
+        </select>
+        <br><br>
+        <button id="saveBtn">
+            Save Member
+        </button>
+        <p id="message"></p>
+    </div>
+</body>
+</html>

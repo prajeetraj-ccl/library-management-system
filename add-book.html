@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="./css/books.css">
+    <script defer src="./js/add-book.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h2>Library Management System</h2>
+        <a href="books.html">Back</a>
+    </div>
+    <div class="container">
+        <h2>Add Book</h2>
+        <label>Book Name</label>
+        <input
+            type="text"
+            id="book_name"
+            placeholder="Enter Book Name">
+        <br><br>
+        <label>Author</label>
+        <input
+            type="text"
+            id="author"
+            placeholder="Enter Author Name">
+        <br><br>
+        <label>Category</label>
+        <input
+            type="text"
+            id="category"
+            placeholder="Enter Category">
+        <br><br>
+        <label>Status</label>
+        <select id="status">
+            <option>Available</option>
+            <option>Borrowed</option>
+        </select>
+        <br><br>
+        <button id="saveBtn">
+            Save Book
+        </button>
+        <p id="message"></p>
+    </div>
+</body>
+</html>

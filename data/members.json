@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "memberName": "John",
+    "mobile": "9876543210",
+    "email": "john@gmail.com",
+    "address": "Chennai",
+    "membershipType": "Student",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "memberName": "David",
+    "mobile": "9123456780",
+    "email": "david@gmail.com",
+    "address": "Coimbatore",
+    "membershipType": "Faculty",
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "memberName": "Priya",
+    "mobile": "9988776655",
+    "email": "priya@gmail.com",
+    "address": "Madurai",
+    "membershipType": "Student",
+    "status": "Inactive"
+  },
+  {
+    "id": 4,
+    "memberName": "Rahul",
+    "mobile": "9001122334",
+    "email": "rahul@gmail.com",
+    "address": "Salem",
+    "membershipType": "Student",
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "memberName": "Anitha",
+    "mobile": "9876501234",
+    "email": "anitha@gmail.com",
+    "address": "Trichy",
+    "membershipType": "Faculty",
+    "status": "Active"
+  }
+]
