@@ -49,7 +49,7 @@ function dashboardUI(){
 
     }
 
-    cardContainer.appendChild(createCard("Books","120"));
+    cardContainer.appendChild(createCard("Books","121"));
     cardContainer.appendChild(createCard("Members","50"));
     cardContainer.appendChild(createCard("Borrowed","25"));
     cardContainer.appendChild(createCard("Returned","95"));

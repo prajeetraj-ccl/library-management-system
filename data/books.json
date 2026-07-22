@@ -2,7 +2,7 @@
   {
     "id": 1,
     "bookName": "Java Basics",
-    "author": "James",
+    "author": "Barani",
     "category": "Programming",
     "publisher": "ABC Publications",
     "language": "English",
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "bookName": "Python Programming",
-    "author": "Mike",
+    "author": "Balaji",
     "category": "Programming",
     "publisher": "XYZ Publications",
     "language": "English",
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "bookName": "HTML & CSS",
-    "author": "John",
+    "author": "Dhilipan",
     "category": "Web Development",
     "publisher": "Tech Books",
     "language": "English",
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "bookName": "JavaScript",
-    "author": "David",
+    "author": "Murali",
     "category": "Programming",
     "publisher": "Code World",
     "language": "English",
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "bookName": "Data Structures",
-    "author": "Robert",
+    "author": "Santhosh",
     "category": "Computer Science",
     "publisher": "Learning Hub",
     "language": "English",
