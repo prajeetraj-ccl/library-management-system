@@ -12,9 +12,41 @@
     </div>
     <div class="container">
         <h2>Books List</h2>
-        <input
-            type="text"
-            placeholder="Search Book">
+        <p id="totalBooks"></p>
+   <input
+    type="text"
+    id="searchBook"
+    placeholder="Search Book">
+    <select id="sortBooks">
+    <option value="">Sort By</option>
+    <option value="title">Title</option>
+    <option value="author">Author</option>
+    <option value="copies">Copies</option>
+</select>
+<select id="categoryFilter">
+    <option value="">All Categories</option>
+    <option value="Programming">Programming</option>
+    <option value="Web Development">Web Development</option>
+    <option value="Computer Science">Computer Science</option>
+</select>
+<select id="statusFilter">
+    <option value="">All Status</option>
+    <option value="Available">Available</option>
+    <option value="Borrowed">Borrowed</option>
+</select>
+<select id="authorFilter">
+    <option value="">All Authors</option>
+    <option value="Barani">Barani</option>
+    <option value="Balaji">Balaji</option>
+    <option value="Dhilipan">Dhilipan</option>
+    <option value="Murali">Murali</option>
+    <option value="Santhosh">Santhosh</option>
+</select>
+<select id="languageFilter">
+    <option value="">All Languages</option>
+    <option value="English">English</option>
+</select>
+<button id="resetBtn">Reset Filters</button>
         <a href="add-book.html">
             <button>Add Book</button>
         </a>
@@ -23,12 +55,18 @@
                 <th>ID</th>
                 <th>Book Name</th>
                 <th>Author</th>
+                <th>ISBN</th>
                 <th>Category</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
         </table>
-    </div>
+       <br><br>
+<div id="pagination">
+    <button id="prevBtn">Previous</button>
+    <span id="pageNo">1</span>
+    <button id="nextBtn">Next</button>
+</div>
     <script src="./js/books.js"></script>
 </body>
 </html>

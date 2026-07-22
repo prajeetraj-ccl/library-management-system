@@ -2,6 +2,7 @@
   {
     "id": 1,
     "bookName": "Java Basics",
+    "isbn": "ISBN001",
     "author": "Barani",
     "category": "Programming",
     "publisher": "ABC Publications",
@@ -13,6 +14,7 @@
   {
     "id": 2,
     "bookName": "Python Programming",
+    "isbn": "ISBN002",
     "author": "Balaji",
     "category": "Programming",
     "publisher": "XYZ Publications",
@@ -24,6 +26,7 @@
   {
     "id": 3,
     "bookName": "HTML & CSS",
+    "isbn": "ISBN003",
     "author": "Dhilipan",
     "category": "Web Development",
     "publisher": "Tech Books",
@@ -35,17 +38,19 @@
   {
     "id": 4,
     "bookName": "JavaScript",
+    "isbn": "ISBN004",
     "author": "Murali",
     "category": "Programming",
     "publisher": "Code World",
     "language": "English",
     "copies": 8,
-    "availableCopies": 50,
+    "availableCopies": 5,
     "status": "Available"
   },
   {
     "id": 5,
     "bookName": "Data Structures",
+    "isbn": "ISBN005",
     "author": "Santhosh",
     "category": "Computer Science",
     "publisher": "Learning Hub",
