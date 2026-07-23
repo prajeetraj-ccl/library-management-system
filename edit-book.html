@@ -2,70 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Book</title>
     <link rel="stylesheet" href="./css/books.css">
-    <script defer src="./js/edit-book.js"></script>
 </head>
 <body>
-<div class="header">
-    <h2>Library Management System</h2>
-    <a href="books.html">Back</a>
-</div>
-<div class="container">
-    <h2>Edit Book</h2>
-    <label>Book Name</label>
-    <br>
-    <input
-        type="text"
-        id="book_name">
-    <br><br>
-    <label>Author</label>
-    <br>
-    <input
-        type="text"
-        id="author">
-    <br><br>
-    <label>Category</label>
-    <br>
-    <input
-        type="text"
-        id="category">
-    <br><br>
-    <label>ISBN</label>
-    <br>
-    <input
-        type="text"
-        id="isbn">
-    <br><br>
-    <label>Publisher</label>
-    <br>
-    <input
-        type="text"
-        id="publisher">
-    <br><br>
-    <label>Language</label>
-    <br>
-    <input
-        type="text"
-        id="language">
-    <br><br>
-    <label>Copies</label>
-    <br>
-    <input
-        type="number"
-        id="copies">
-    <br><br>
-    <label>Status</label>
-    <br>
-    <select id="status">
-        <option>Available</option>
-        <option>Borrowed</option>
-    </select>
-    <br><br>
-    <button id="updateBtn">
-        Update Book
-    </button>
-    <p id="message"></p>
-</div>
+    <div id="app"></div>
+    <script src="./js/utils.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/book-service.js"></script>
+    <script src="./js/book-form.js"></script>
 </body>
 </html>

@@ -1,77 +1,60 @@
-if(sessionStorage.getItem("login")!="true"){
-    window.location.href="index.html";
+if (protectPage()) {
+  setupStorage().then(function () {
+    renderDashboard();
+  });
 }
 
-function dashboardUI(){
-    const header=document.createElement("div");
-    header.classList.add("header");
+function renderDashboard() {
+  const content = renderLayout("Dashboard");
+  const books = getBooks();
+  const members = getMembers();
+  let borrowedCount = 0;
+  let availableCount = 0;
 
-    const title=document.createElement("h2");
-    title.innerHTML="Library Dashboard";
-
-    const logout=document.createElement("button");
-    logout.id="logout";
-    logout.innerHTML="Logout";
-
-    logout.onclick=function(){
-        sessionStorage.removeItem("login");
-        window.location.href="index.html";
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].availableCopies < books[i].copies) {
+      borrowedCount = borrowedCount + (books[i].copies - books[i].availableCopies);
     }
-
-    header.appendChild(title);
-    header.appendChild(logout);
-
-    const container=document.createElement("div");
-    container.classList.add("container");
-
-    const welcome=document.createElement("h2");
-    welcome.innerHTML="Welcome Librarian ";
-
-    container.appendChild(welcome);
-
-    const cardContainer=document.createElement("div");
-    cardContainer.classList.add("card-container");
-
-    function createCard(name,value){
-        const card=document.createElement("div");
-        card.classList.add("card");
-
-        const title=document.createElement("h3");
-        title.innerHTML=name;
-
-        const count=document.createElement("p");
-        count.innerHTML=value;
-
-        card.appendChild(title);
-        card.appendChild(count);
-
-        return card;
-
+    if (books[i].availableCopies > 0) {
+      availableCount = availableCount + books[i].availableCopies;
     }
+  }
 
-    cardContainer.appendChild(createCard("Books","121"));
-    cardContainer.appendChild(createCard("Members","50"));
-    cardContainer.appendChild(createCard("Borrowed","25"));
-    cardContainer.appendChild(createCard("Returned","95"));
-    container.appendChild(cardContainer);
+  const grid = document.createElement("div");
+  grid.className = "stats-grid";
 
-    const menu=document.createElement("div");
-    menu.classList.add("menu");
+  grid.appendChild(createStatCard("Books", books.length));
+  grid.appendChild(createStatCard("Members", members.length));
+  grid.appendChild(createStatCard("Borrowed Copies", borrowedCount));
+  grid.appendChild(createStatCard("Available Copies", availableCount));
 
-    const books=document.createElement("a");
-    books.href="books.html";
-    books.innerHTML="📚 Books";
+  content.appendChild(grid);
 
-    const members=document.createElement("a");
-    members.href="members.html";
-    members.innerHTML="👤 Members";
+  const card = document.createElement("div");
+  card.className = "card";
+  card.style.marginTop = "18px";
 
-    menu.appendChild(books);
-    menu.appendChild(members);
-    container.appendChild(menu);
-    document.body.appendChild(header);
-    document.body.appendChild(container);
+  const heading = createElementWithText("h2", "Quick Actions");
+  const actions = document.createElement("div");
+  actions.className = "form-actions";
+  actions.appendChild(createLink("Add Book", "add-book.html", "btn-primary"));
+  actions.appendChild(createLink("Register Member", "add-members.html", "btn-success"));
+  actions.appendChild(createLink("Manage Authors", "authors.html", "btn-light"));
+  actions.appendChild(createLink("Manage Categories", "categories.html", "btn-light"));
 
+  card.appendChild(heading);
+  card.appendChild(actions);
+  content.appendChild(card);
 }
 
-dashboardUI();
+function createStatCard(name, value) {
+  const card = document.createElement("div");
+  card.className = "card stat-card";
+
+  const title = createElementWithText("h3", name);
+  const count = createElementWithText("p", String(value));
+
+  card.appendChild(title);
+  card.appendChild(count);
+  return card;
+}

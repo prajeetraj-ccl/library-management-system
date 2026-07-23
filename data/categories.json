@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "categoryName": "Programming"
+  },
+  {
+    "id": 2,
+    "categoryName": "Web Development"
+  },
+  {
+    "id": 3,
+    "categoryName": "Computer Science"
+  }
+]

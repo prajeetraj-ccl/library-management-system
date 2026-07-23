@@ -1,98 +1,98 @@
-function dynamicUI(){
-    const divElement=document.createElement("div");
-    divElement.classList.add("div-container");
-    
-    const logo=document.createElement("div");
-    logo.innerHTML="📚";
-    logo.style.fontSize="50px";
-    logo.style.textAlign="center";
+function renderLogin() {
+  if (isLoggedIn()) {
+    window.location.replace("dashboard.html");
+    return;
+  }
 
-    const title=document.createElement("h2");
-    title.innerHTML="Library Management System";
-    title.style.textAlign="center";
+  const app = getApp();
+  clearElement(app);
 
-    const welcome=document.createElement("h3");
-    welcome.innerHTML="Welcome Back";
-    welcome.style.textAlign="center";
+  const page = document.createElement("div");
+  page.className = "login-page";
 
-    const description=document.createElement("p");
-    description.innerHTML="Login to continue";
-    description.style.textAlign="center";
-    description.style.color="gray";
+  const card = document.createElement("div");
+  card.className = "login-card";
 
-    const usernameLabel=document.createElement("label");
-    usernameLabel.innerHTML="Username";
+  const logo = document.createElement("div");
+  logo.className = "login-logo";
+  logo.textContent = "L";
 
-    const username=document.createElement("input");
-    username.type="text";
-    username.placeholder="Enter Username";
-    username.id="username_id";
-    username.classList.add("username-container");
+  const title = createElementWithText("h1", "Library Management System");
+  const heading = createElementWithText("h2", "Welcome Back");
+  const note = createElementWithText("p", "Login to continue");
+  note.className = "muted";
+  note.style.textAlign = "center";
 
-    const passwordLabel=document.createElement("label");
-    passwordLabel.innerHTML="Password";
+  const usernameField = createField("Username", "text", "username", "Enter username");
+  const passwordField = createField("Password", "password", "password", "Enter password");
 
-    const password=document.createElement("input");
-    password.type="password";
-    password.placeholder="Enter Password";
-    password.id="password_id";
-    password.classList.add("username-container");
+  const message = document.createElement("p");
+  message.className = "message";
 
-    const rememberDiv=document.createElement("div");
-    const remember=document.createElement("input");
-    remember.type="checkbox";
-    const rememberLabel=document.createElement("label");
-    rememberLabel.innerHTML=" Remember Me";
-    rememberDiv.appendChild(remember);
-    rememberDiv.appendChild(rememberLabel);
+  const button = createButton("Login", "btn-primary");
+  button.style.width = "100%";
 
-    const error=document.createElement("p");
-    error.id="error_msg";
+  button.onclick = function () {
+    submitLogin(button, message);
+  };
 
-    const button=document.createElement("button");
-    button.innerHTML="Login";
-    button.id="btn_id";
-
-    button.onclick=function(){
-        const user=document.getElementById("username_id").value;
-        const pass=document.getElementById("password_id").value;
-        if(user==""){ 
-            error.innerHTML="Username is required";
-            return;
-        }
-        if(pass==""){
-            error.innerHTML="Password is required";
-            return;
-        }
-        if(user=="admin" && pass=="1234"){
-            sessionStorage.setItem("login","true");
-            window.location.href="dashboard.html";
-        }
-        else{
-            error.innerHTML="Invalid Username or Password";
-        }
+  document.addEventListener("keydown", function (event) {
+    if (event.key == "Enter") {
+      submitLogin(button, message);
     }
+  });
 
-    const version=document.createElement("p");
-    version.innerHTML="Version 1.0.0";
-    version.style.textAlign="center";
-    version.style.color="gray";
-    version.style.fontSize="12px";
-    version.style.marginTop="20px";
-
-    divElement.appendChild(logo);
-    divElement.appendChild(title);
-    divElement.appendChild(welcome);
-    divElement.appendChild(description);
-    divElement.appendChild(usernameLabel);
-    divElement.appendChild(username);
-    divElement.appendChild(passwordLabel);
-    divElement.appendChild(password);
-    divElement.appendChild(error);
-    divElement.appendChild(rememberDiv);
-    divElement.appendChild(button);
-    divElement.appendChild(version);
-    document.body.appendChild(divElement);
+  card.appendChild(logo);
+  card.appendChild(title);
+  card.appendChild(heading);
+  card.appendChild(note);
+  card.appendChild(usernameField);
+  card.appendChild(passwordField);
+  card.appendChild(message);
+  card.appendChild(button);
+  page.appendChild(card);
+  app.appendChild(page);
 }
 
-dynamicUI();
+function submitLogin(button, message) {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+  let isValid = true;
+
+  if (!isRequired(username)) {
+    showFieldError("username", "Username is required");
+    isValid = false;
+  } else {
+    showFieldSuccess("username");
+  }
+
+  if (!isRequired(password)) {
+    showFieldError("password", "Password is required");
+    isValid = false;
+  } else if (!hasMinimumLength(password, 4)) {
+    showFieldError("password", "Password must be at least 4 characters");
+    isValid = false;
+  } else {
+    showFieldSuccess("password");
+  }
+
+  if (!isValid) {
+    showMessage(message, "Please fix the errors and try again", "error");
+    return;
+  }
+
+  button.disabled = true;
+  button.textContent = "Logging in...";
+
+  setTimeout(function () {
+    if (loginUser(username, password)) {
+      showMessage(message, "Login successful", "success");
+    } else {
+      button.disabled = false;
+      button.textContent = "Login";
+      showMessage(message, "Wrong username or password", "error");
+    }
+  }, 600);
+}
+
+renderLogin();

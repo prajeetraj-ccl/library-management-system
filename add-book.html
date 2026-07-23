@@ -1,54 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Book</title>
-    <link rel="stylesheet" href="./css/books.css" />
-    <script defer src="./js/add-book.js"></script>
-  </head>
-  <body>
-    <div class="header">
-      <h2>Library Management System</h2>
-      <a href="books.html">Back</a>
-    </div>
-    <div class="container">
-      <h2>Add Book</h2>
-      <label>Book Name</label>
-      <input type="text" id="book_name" placeholder="Enter Book Name" />
-      <br /><br />
-      <label>ISBN</label>
-      <input type="text" id="isbn" placeholder="Enter ISBN" />
-      <br /><br />
-      <label>Publisher</label>
-      <input type="text" id="publisher" placeholder="Enter Publisher" />
-      <br /><br />
-      <label>Language</label>
-      <input type="text" id="language" placeholder="Enter Language" />
-      <br /><br />
-      <label>Copies</label>
-      <input type="number" id="copies" placeholder="Enter Copies" />
-      <br /><br />
-      <label>Available Copies</label>
-      <input
-        type="number"
-        id="availableCopies"
-        placeholder="Enter Available Copies"
-      />
-      <br /><br />
-      <label>Author</label>
-      <input type="text" id="author" placeholder="Enter Author Name" />
-      <br /><br />
-      <label>Category</label>
-      <input type="text" id="category" placeholder="Enter Category" />
-      <br /><br />
-      <label>Status</label>
-      <select id="status">
-        <option>Available</option>
-        <option>Borrowed</option>
-      </select>
-      <br /><br />
-      <button id="saveBtn">Save Book</button>
-      <p id="message"></p>
-    </div>
-  </body>
+    <link rel="stylesheet" href="./css/books.css">
+</head>
+<body>
+    <div id="app"></div>
+    <script src="./js/utils.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/validation.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script src="./js/book-service.js"></script>
+    <script src="./js/book-form.js"></script>
+</body>
 </html>
